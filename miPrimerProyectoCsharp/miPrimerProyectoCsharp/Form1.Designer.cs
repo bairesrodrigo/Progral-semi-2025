@@ -29,62 +29,76 @@ namespace miPrimerProyectoCsharp
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblNombre = new System.Windows.Forms.Label();
-            this.btnSaludar = new System.Windows.Forms.Button();
-            this.lblSaludo = new System.Windows.Forms.Label();
-            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.btnCalcular = new System.Windows.Forms.Button();
+            this.lblNum1 = new System.Windows.Forms.Label();
+            this.txtNum1 = new System.Windows.Forms.TextBox();
+            this.txtNum2 = new System.Windows.Forms.TextBox();
+            this.lblnum2 = new System.Windows.Forms.Label();
+            this.lblResultado = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // lblNombre
+            // btnCalcular
             // 
-            this.lblNombre.AutoSize = true;
-            this.lblNombre.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.Location = new System.Drawing.Point(39, 50);
-            this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(70, 19);
-            this.lblNombre.TabIndex = 0;
-            this.lblNombre.Text = "Nombre";
+            this.btnCalcular.Location = new System.Drawing.Point(73, 164);
+            this.btnCalcular.Name = "btnCalcular";
+            this.btnCalcular.Size = new System.Drawing.Size(75, 23);
+            this.btnCalcular.TabIndex = 0;
+            this.btnCalcular.Text = "Calcular";
+            this.btnCalcular.UseVisualStyleBackColor = true;
+            this.btnCalcular.Click += new System.EventHandler(this.btnCalcular_Click);
             // 
-            // btnSaludar
+            // lblNum1
             // 
-            this.btnSaludar.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.btnSaludar.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaludar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnSaludar.Location = new System.Drawing.Point(129, 98);
-            this.btnSaludar.Name = "btnSaludar";
-            this.btnSaludar.Size = new System.Drawing.Size(173, 53);
-            this.btnSaludar.TabIndex = 1;
-            this.btnSaludar.Text = "Saludar";
-            this.btnSaludar.UseVisualStyleBackColor = false;
-            this.btnSaludar.Click += new System.EventHandler(this.btnSaludar_Click);
+            this.lblNum1.AutoSize = true;
+            this.lblNum1.Location = new System.Drawing.Point(26, 25);
+            this.lblNum1.Name = "lblNum1";
+            this.lblNum1.Size = new System.Drawing.Size(41, 13);
+            this.lblNum1.TabIndex = 1;
+            this.lblNum1.Text = "Num 1:";
             // 
-            // lblSaludo
+            // txtNum1
             // 
-            this.lblSaludo.AutoSize = true;
-            this.lblSaludo.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSaludo.Location = new System.Drawing.Point(39, 189);
-            this.lblSaludo.Name = "lblSaludo";
-            this.lblSaludo.Size = new System.Drawing.Size(41, 16);
-            this.lblSaludo.TabIndex = 2;
-            this.lblSaludo.Text = "Hola!";
+            this.txtNum1.Location = new System.Drawing.Point(73, 22);
+            this.txtNum1.Name = "txtNum1";
+            this.txtNum1.Size = new System.Drawing.Size(100, 20);
+            this.txtNum1.TabIndex = 2;
             // 
-            // txtNombre
+            // txtNum2
             // 
-            this.txtNombre.Location = new System.Drawing.Point(129, 49);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(220, 20);
-            this.txtNombre.TabIndex = 3;
-            this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
+            this.txtNum2.Location = new System.Drawing.Point(73, 54);
+            this.txtNum2.Name = "txtNum2";
+            this.txtNum2.Size = new System.Drawing.Size(100, 20);
+            this.txtNum2.TabIndex = 4;
+            // 
+            // lblnum2
+            // 
+            this.lblnum2.AutoSize = true;
+            this.lblnum2.Location = new System.Drawing.Point(26, 57);
+            this.lblnum2.Name = "lblnum2";
+            this.lblnum2.Size = new System.Drawing.Size(41, 13);
+            this.lblnum2.TabIndex = 3;
+            this.lblnum2.Text = "Num 2:";
+            // 
+            // lblResultado
+            // 
+            this.lblResultado.AutoSize = true;
+            this.lblResultado.Location = new System.Drawing.Point(29, 92);
+            this.lblResultado.Name = "lblResultado";
+            this.lblResultado.Size = new System.Drawing.Size(67, 13);
+            this.lblResultado.TabIndex = 5;
+            this.lblResultado.Text = "Resultado: ?";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(457, 250);
-            this.Controls.Add(this.txtNombre);
-            this.Controls.Add(this.lblSaludo);
-            this.Controls.Add(this.btnSaludar);
-            this.Controls.Add(this.lblNombre);
+            this.ClientSize = new System.Drawing.Size(218, 266);
+            this.Controls.Add(this.lblResultado);
+            this.Controls.Add(this.txtNum2);
+            this.Controls.Add(this.lblnum2);
+            this.Controls.Add(this.txtNum1);
+            this.Controls.Add(this.lblNum1);
+            this.Controls.Add(this.btnCalcular);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -95,10 +109,12 @@ namespace miPrimerProyectoCsharp
 
         #endregion
 
-        private System.Windows.Forms.Label lblNombre;
-        private System.Windows.Forms.Button btnSaludar;
-        private System.Windows.Forms.Label lblSaludo;
-        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.Button btnCalcular;
+        private System.Windows.Forms.Label lblNum1;
+        private System.Windows.Forms.TextBox txtNum1;
+        private System.Windows.Forms.TextBox txtNum2;
+        private System.Windows.Forms.Label lblnum2;
+        private System.Windows.Forms.Label lblResultado;
     }
 }
 

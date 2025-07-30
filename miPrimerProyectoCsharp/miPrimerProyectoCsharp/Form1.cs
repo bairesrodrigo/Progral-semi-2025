@@ -27,9 +27,16 @@ namespace miPrimerProyectoCsharp
 
         }
 
-        private void btnSaludar_Click(object sender, EventArgs e)
+
+        private void btnCalcular_Click(object sender, EventArgs e)
         {
-            lblSaludo.Text = "¡Hola, " + txtNombre.Text + "!";
+            double num1, num2, resultado;
+            num1 = double.Parse(txtNum1.Text);
+            num2 = double.Parse(txtNum2.Text);
+
+            resultado = num1 + num2;
+
+            lblResultado.Text = "Resultado: " + resultado;
         }
     }
 }
