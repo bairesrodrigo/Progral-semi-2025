@@ -19,144 +19,45 @@ namespace miPrimerProyectoCsharp
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            //Hacer un ejercicio haciendo uso de matrices, estructuras de repeticion y condicionales
+            //Que determine el sueldo neto a pagar a un empleado descontando las deducciones correspondientes de ley.
+        }
+        private double[][] tablaIsr = new double[][]{
+                new Double[] {0.01, 550, 0, 0},
+                new Double[] {550.01,895.24, 0.10, 17.67},
+                new Double[] {895.25, 2038.10, 0.20, 60},
+                new double[] {2038.11, 9999999, 0.30, 288.57}
+        };
 
+        private double calcularDeducciones(double sueldo, double porcentaje)
+        {
+            return sueldo * porcentaje;
         }
 
-        private void txtNombre_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-
-        private void btnCalcular_Click(object sender, EventArgs e)
-        {
-            double num1, num2, resultado = 0;
-            num1 = double.Parse(txtNum1.Text);
-            num2 = double.Parse(txtNum2.Text);
-
-            if (optSuma.Checked)
-            {
-                resultado = num1 + num2;
-            }
-
-            if (optResta.Checked)
-            {
-                resultado = num1 - num2;
-            }
-
-            if (optMultiplicacion.Checked)
-            {
-                resultado = num1 * num2;
-            }
-
-            if (optDivision.Checked)
-            {
-                resultado = num1 / num2;
-            }
- 
-            if (optExponente.Checked)
-            { 
-                resultado = Math.Pow(num1, num2);
-            }
-
-            if (optPorcentaje.Checked)
-            { 
-                resultado = num1*num2 / 100;
-            }
-
-            if (optFactorial.Checked)
-            {
-                resultado = (int)num1;
-                for (int i = (int)num1 - 1; i > 1; i--) { //5! = 5*4*3*2*1 = 120
-                    resultado *= i;
-                }
-            }
-
-            if (optModulo.Checked)
-            {
-                resultado = num1%num2;
-            }
-            lblResultado.Text = "Resultado: " + resultado;
-
-            //Validar si es primo
-            if (optPrimo.Checked)
-            {
-                int i = 1, acum = 0;
-                while(i<=num1 && acum<3)
+        private double calcularIsr(double sueldo) {
+            double isr = 0;
+                for (int i = 0; i<tablaIsr.Length; i++) {
+                if (sueldo >= tablaIsr[i][0] && sueldo <= tablaIsr[i][1])
                 {
-                    if (num1%i==0)
-                    {
-                        acum++; //acum = acum + 1;
-                    }
-                    i++;
-                }
-                if (acum <= 2)
-                {
-                    lblResultado.Text = "Respuesta: " + num1 + " es primo";
-                } else {
-                    lblResultado.Text = "Respuesta: " + num1 + " no es primo";
+                    isr = (sueldo - tablaIsr[i][0]) * tablaIsr[i][2] + tablaIsr[i][3];
                 }
             }
+            return isr;
         }
+        private void btnCalcular_Click(object sender, EventArgs e) {
+            double sueldo = 0, isss = 0, afp = 0, isr = 0, sueldoNeto = 0;
+            sueldo = double.Parse(txtSueldo.Text);
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
+            isss = calcularDeducciones(sueldo, 0.03); //3% del ISSS = 3/100 = 0.03
+            afp = calcularDeducciones(sueldo, 0.0725); //7.25% del AFP = 7.25/100 = 0.0725
+            isr = calcularIsr(sueldo - isss - afp); //Calcular el ISR
+            sueldoNeto = sueldo - isss - afp - isr;
 
-        }
-        private void btnCalcular2_Click(object sender, EventArgs e)
-        {
-            double num1, num2, respuesta = 0;
-            num1 = double.Parse(txtNum1.Text);
-            num2 = double.Parse(txtNum2.Text);
-
-
-            switch (cboOpciones.SelectedIndex)
-            {
-                case 0:
-                    respuesta = num1 + num2;
-                    lblRespuesta.Text = "Respuesta: " + respuesta;
-                    break;
-                case 1:
-                    respuesta = num1 - num2;
-                    lblRespuesta.Text = "Respuesta: " + respuesta;
-                    break;
-                case 2:
-                    respuesta = num1 * num2;
-                    lblRespuesta.Text = "Respuesta: " + respuesta;
-                    break;
-                case 3:
-                    respuesta = num1 / num2;
-                    lblRespuesta.Text = "Respuesta: " + respuesta;
-                    break;
-                case 4:
-                    respuesta = (int)num1;
-                    for (int i = (int)num1 - 1; i > 1; i--) //5! = 5*4*3*2*1 = 120
-                        respuesta *= i;
-                    lblRespuesta.Text = "Respuesta: " + respuesta;
-                    break;
-
-                case 5:
-                    {
-                        int i = 1, acum = 0;
-                        while (i <= num1 && acum < 3)
-                        {
-                            if (num1 % i == 0)
-                            {
-                                acum++; //acum = acum + 1;
-                            }
-                            i++;
-                        }
-                        if (acum <= 2)
-                        {
-                            lblRespuesta.Text = "Respuesta: " + num1 + " es primo";
-                        }
-                        else
-                        {
-                            lblRespuesta.Text = "Respuesta: " + num1 + " no es primo";
-                        }
-                    }
-                    break;
-            }
+            lblISSS.Text = "ISSS: " + isss.ToString("C2");
+            lblAFP.Text = "AFP: " + afp.ToString("C2");
+            lblISR.Text = "ISR: " + isr.ToString("C2");
+            lblTotalDeducciones.Text = "Total Deducciones: " + (isss + afp + isr).ToString("C2");
+            lblSueldoNeto.Text = "Sueldo Neto: " + sueldoNeto.ToString("C2");
         }
     }
 }
