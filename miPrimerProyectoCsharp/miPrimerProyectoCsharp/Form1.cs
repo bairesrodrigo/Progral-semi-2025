@@ -21,18 +21,46 @@ namespace miPrimerProyectoCsharp
         {
             
         }
-
-        private void btnCalcular_Click(object sender, EventArgs e)
+        String[][] etiquetas = new string[][]
         {
-            String[] serie = txrSerie.Text.Split(','); //5,10,15 => ("5","10,"15")
+            new string[]{"Dolar", "Peso Mexicanos", "Quetzal", "Lempira", "Colon SV", "Cordobas", "Colon CR"}, //Monedas
+            new string[]{"Metros", "cm", "Pulgada", "Pies", "Varas", "Yardas", "Km", "Millas"}, //Longitud
+            new string[]{"Libra", "Onza", "Gramo", "Kg", "Quintal", "Tonelada Corta"}, //Masa
+            new string[]{"Galon US", "Litros", "Pinta US", "mL"}, //Volumen
+            new string[]{"GB", "Bit", "Byte", "KB", "MB", "TB"}, //Almacenamiento
+            new string[]{"Dia", "Segundos", "Minutos", "Horas", "Semana", "Meses", "Año"}, //Tiempo
+        };
 
-            int suma = 0;
-            for (int i = 0; i < serie.Length; i++){
-                suma = suma + int.Parse(serie[i]);
-            }
-            lblSuma.Text = "Suma: " + suma;
-            //lblSuma.Text = " Serie: " + serie.Sum();
+        double[][] valores = new double[][]
+        {
+            new double []{1, 18.78, 7.66, 26.15, 8.75, 36.78, 504.12}, //Monedas
+            new double[]{1, 100, 39.37, 3.28084, 1.193, 1.09361, 0.001, 0.000621371}, //Longitud
+            new double[]{1, 16, 453.592, 0.453592, 0.01, 0.0005}, //Masa
+            new double[]{1, 3.78541, 8, 3785.41}, //Volumen
+            new double[]{1, 8e+9, 1e+9, 1e+6, 1024, 0.001}, //Almacenamiento
+            new double[]{1, 86400, 1440, 24, 0.142857, 0.0328767, 0.00273973}, //Tiempo
+        };
+
+        private void btnConvertir_Click(object sender, EventArgs e)
+        {
+            double cantidad = double.Parse(txtCantidadConversor.Text);
+
+            int tipo = cboTipoConversor.SelectedIndex;
+            int de = cboDeConversor.SelectedIndex;
+            int a = cboAConversor.SelectedIndex;
+
+            double respuesta = cantidad * valores[tipo][a] / valores[tipo][de];
+
+            lblRespuesta.Text = "Respuesta: " + respuesta.ToString("N2");
+        }
+
+        private void cboTipoConversor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cboDeConversor.Items.Clear();
+            cboAConversor.Items.Clear();
+
+            cboDeConversor.Items.AddRange(etiquetas[cboTipoConversor.SelectedIndex]);
+            cboAConversor.Items.AddRange(etiquetas[cboTipoConversor.SelectedIndex]);
         }
     }
 }
-
