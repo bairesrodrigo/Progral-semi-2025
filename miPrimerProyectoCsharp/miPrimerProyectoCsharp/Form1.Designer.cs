@@ -72,9 +72,9 @@ namespace miPrimerProyectoCsharp
             // 
             this.btnConvertir.BackColor = System.Drawing.SystemColors.Window;
             this.btnConvertir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConvertir.Location = new System.Drawing.Point(377, 83);
+            this.btnConvertir.Location = new System.Drawing.Point(319, 70);
             this.btnConvertir.Name = "btnConvertir";
-            this.btnConvertir.Size = new System.Drawing.Size(123, 58);
+            this.btnConvertir.Size = new System.Drawing.Size(176, 99);
             this.btnConvertir.TabIndex = 3;
             this.btnConvertir.Text = "Convertir";
             this.btnConvertir.UseVisualStyleBackColor = false;
@@ -92,7 +92,8 @@ namespace miPrimerProyectoCsharp
             "Masa",
             "Volumen",
             "Almacenamiento",
-            "Tiempo"});
+            "Tiempo",
+            "Área"});
             this.cboTipoConversor.Location = new System.Drawing.Point(62, 26);
             this.cboTipoConversor.Name = "cboTipoConversor";
             this.cboTipoConversor.Size = new System.Drawing.Size(149, 21);
@@ -169,7 +170,7 @@ namespace miPrimerProyectoCsharp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 298);
+            this.ClientSize = new System.Drawing.Size(513, 305);
             this.Controls.Add(this.lblAConversor);
             this.Controls.Add(this.cboAConversor);
             this.Controls.Add(this.lblDe);
