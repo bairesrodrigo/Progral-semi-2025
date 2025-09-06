@@ -28,3 +28,14 @@ C:\Users\MINEDUCYT\Documents\Programacion2025\miPrimerProyectoCsharp\miPrimerPro
 C:\Users\MINEDUCYT\Documents\Programacion2025\miPrimerProyectoCsharp\miPrimerProyectoCsharp\obj\Debug\miPrimerProyectoCsharp.csproj.CoreCompileInputs.cache
 C:\Users\MINEDUCYT\Documents\Programacion2025\miPrimerProyectoCsharp\miPrimerProyectoCsharp\obj\Debug\miPrimerProyectoCsharp.exe
 C:\Users\MINEDUCYT\Documents\Programacion2025\miPrimerProyectoCsharp\miPrimerProyectoCsharp\obj\Debug\miPrimerProyectoCsharp.pdb
+C:\Users\MINEDUCYT\Documents\Progra2025\miPrimerProyectoCsharp\miPrimerProyectoCsharp\obj\Debug\miPrimerProyectoCsharp.csproj.AssemblyReference.cache
+C:\Users\MINEDUCYT\Documents\Progra2025\miPrimerProyectoCsharp\miPrimerProyectoCsharp\obj\Debug\miPrimerProyectoCsharp.Form1.resources
+C:\Users\MINEDUCYT\Documents\Progra2025\miPrimerProyectoCsharp\miPrimerProyectoCsharp\obj\Debug\miPrimerProyectoCsharp.Properties.Resources.resources
+C:\Users\MINEDUCYT\Documents\Progra2025\miPrimerProyectoCsharp\miPrimerProyectoCsharp\obj\Debug\miPrimerProyectoCsharp.csproj.GenerateResource.cache
+C:\Users\MINEDUCYT\Documents\Progra2025\miPrimerProyectoCsharp\miPrimerProyectoCsharp\obj\Debug\miPrimerProyectoCsharp.csproj.CoreCompileInputs.cache
+C:\Users\MINEDUCYT\Documents\Progra2025\miPrimerProyectoCsharp\miPrimerProyectoCsharp\obj\Debug\miPrimerProyectoCsharp.exe
+C:\Users\MINEDUCYT\Documents\Progra2025\miPrimerProyectoCsharp\miPrimerProyectoCsharp\obj\Debug\miPrimerProyectoCsharp.pdb
+C:\Users\MINEDUCYT\Documents\Progra2025\miPrimerProyectoCsharp\miPrimerProyectoCsharp\bin\Debug\miPrimerProyectoCsharp.exe.config
+C:\Users\MINEDUCYT\Documents\Progra2025\miPrimerProyectoCsharp\miPrimerProyectoCsharp\bin\Debug\miPrimerProyectoCsharp.exe
+C:\Users\MINEDUCYT\Documents\Progra2025\miPrimerProyectoCsharp\miPrimerProyectoCsharp\bin\Debug\miPrimerProyectoCsharp.pdb
+C:\Users\MINEDUCYT\Documents\Progra2025\miPrimerProyectoCsharp\miPrimerProyectoCsharp\obj\Debug\miPrimerProyectoCsharp.Form2.resources
