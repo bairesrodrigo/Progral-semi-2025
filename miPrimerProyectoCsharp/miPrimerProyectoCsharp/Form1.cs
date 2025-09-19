@@ -30,6 +30,7 @@ namespace miPrimerProyectoCsharp
             objDt = objDs.Tables["alumnos"];
             objDt.PrimaryKey = new DataColumn[] { objDt.Columns["idAlumno"] };
 
+            grdAlumnos.DataSource = objDt.DefaultView;
             mostrarDatos();
         }
 
@@ -170,6 +171,28 @@ namespace miPrimerProyectoCsharp
                     actualizarDs();
                 }
             }
+        }
+
+        private void txtBuscarAlumno_KeyUp(object sender, KeyEventArgs e)
+        {
+            filtrarDatos(txtBuscarAlumno.Text);
+        }
+        private void filtrarDatos(String valor)
+        {
+            DataView objDv = objDt.DefaultView;
+            objDv.RowFilter = "codigo like '%" + valor + "%' OR nombre like '%" + valor + "%'";
+            grdAlumnos.DataSource = objDv;
+            seleccionarAlumno();
+        }
+        private void seleccionarAlumno()
+        {
+            posicion = objDt.Rows.IndexOf(objDt.Rows.Find(grdAlumnos.CurrentRow.Cells["id"].Value));
+            mostrarDatos();
+        }
+
+        private void grdAlumnos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            seleccionarAlumno();
         }
     }
 }
