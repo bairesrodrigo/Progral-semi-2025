@@ -30,3 +30,4 @@ C:\Users\MINEDUCYT\Documents\Programacion2025\miPrimerProyectoCsharp\miPrimerPro
 C:\Users\MINEDUCYT\Documents\Programacion2025\miPrimerProyectoCsharp\miPrimerProyectoCsharp\obj\Debug\miPrimerProyectoCsharp.pdb
 C:\Users\MINEDUCYT\Documents\Progral-semi-2025\miPrimerProyectoCsharp\miPrimerProyectoCsharp\bin\Debug\db_academica.mdf
 C:\Users\MINEDUCYT\Documents\Progral-semi-2025\miPrimerProyectoCsharp\miPrimerProyectoCsharp\bin\Debug\db_academica_log.ldf
+C:\Users\MINEDUCYT\Documents\Progral-semi-2025\miPrimerProyectoCsharp\miPrimerProyectoCsharp\obj\Debug\miPrimerProyectoCsharp.Form2.resources
