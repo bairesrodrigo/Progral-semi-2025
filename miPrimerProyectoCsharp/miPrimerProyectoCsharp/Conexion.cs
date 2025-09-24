@@ -39,16 +39,18 @@ namespace miPrimerProyectoCsharp
             if (accion == "nuevo")
             {
                 sql = "INSERT INTO alumnos (codigo, nombre, direccion, telefono) VALUES (@codigo, @nombre, @direccion, @telefono)";
-            } else if (accion == "modificar")
+            }
+            else if (accion == "modificar")
             {
                 sql = "UPDATE alumnos SET codigo = @codigo, nombre = @nombre, direccion = @direccion, telefono = @telefono WHERE idAlumno = @idAlumno";
-            } else if (accion == "eliminar")
+            }
+            else if (accion == "eliminar")
             {
                 sql = "DELETE FROM alumnos WHERE idAlumno = @idAlumno";
             }
             return ejecutarSQL(sql, datos);
         }
-        private String ejecutarSQL(String sql, String [] datos)
+        private String ejecutarSQL(String sql, String[] datos)
         {
             try
             {
@@ -64,7 +66,8 @@ namespace miPrimerProyectoCsharp
 
                 return objComando.ExecuteNonQuery().ToString();
 
-            } catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 return ex.Message;
             }
@@ -111,6 +114,55 @@ namespace miPrimerProyectoCsharp
                 objComando.Parameters.AddWithValue("@asignatura", datos[3]);
                 objComando.Parameters.AddWithValue("@direccion", datos[4]);
                 objComando.Parameters.AddWithValue("@telefono", datos[5]);
+
+                return objComando.ExecuteNonQuery().ToString();
+
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
+        }
+        public DataSet obtenerDatosMateria()
+        {
+            objDs.Clear(); //Limpia el DataSet
+            objComando.Connection = objConexion; //Establecer la conexion para ejecutar comandos
+
+            objAdaptador.SelectCommand = objComando; //Establece el comando de seleccion
+            objComando.CommandText = "SELECT * FROM materias"; //Seleccionar todo de una tabla
+            objAdaptador.Fill(objDs, "materias"); //Tomando los datos de la BD y llenando DataSet
+
+            return objDs;
+        }
+        public string administrarDatosMateria(String[] datos, String accion)
+        {
+            String sql = "";
+            if (accion == "nuevo")
+            {
+                sql = "INSERT INTO materias (codigo, nombre, unidadvalorativa) VALUES (@codigo, @nombre, @unidadvalorativa)";
+            }
+            else if (accion == "modificar")
+            {
+                sql = "UPDATE materias SET codigo = @codigo, nombre = @nombre, unidadvalorativa = @unidadvalorativa WHERE idMateria = @idMateria";
+            }
+            else if (accion == "eliminar")
+            {
+                sql = "DELETE FROM materias WHERE idMateria = @idMateria";
+            }
+            return ejecutarSQLMateria(sql, datos);
+        }
+        private String ejecutarSQLMateria(String sql, String[] datos)
+        {
+            try
+            {
+                objComando.Connection = objConexion;
+                objComando.CommandText = sql;
+
+                objComando.Parameters.Clear();
+                objComando.Parameters.AddWithValue("@idMateria", datos[0]);
+                objComando.Parameters.AddWithValue("@codigo", datos[1]);
+                objComando.Parameters.AddWithValue("@nombre", datos[2]);
+                objComando.Parameters.AddWithValue("@unidadvalorativa", datos[3]);
 
                 return objComando.ExecuteNonQuery().ToString();
 

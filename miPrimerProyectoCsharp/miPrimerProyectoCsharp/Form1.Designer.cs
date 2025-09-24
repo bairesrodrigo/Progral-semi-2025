@@ -51,13 +51,13 @@ namespace miPrimerProyectoCsharp
             this.btnModificarAlumno = new System.Windows.Forms.Button();
             this.btnAgregarAlumno = new System.Windows.Forms.Button();
             this.grbBusquedaAlumno = new System.Windows.Forms.GroupBox();
-            this.txtBuscarAlumno = new System.Windows.Forms.TextBox();
             this.grdAlumnos = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtBuscarAlumno = new System.Windows.Forms.TextBox();
             this.grbDatosAlumno.SuspendLayout();
             this.grbNavegacionAlumno.SuspendLayout();
             this.grbEdicionAlumno.SuspendLayout();
@@ -92,7 +92,7 @@ namespace miPrimerProyectoCsharp
             this.idAlumno.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.idAlumno.Location = new System.Drawing.Point(115, 38);
             this.idAlumno.Name = "idAlumno";
-            this.idAlumno.Size = new System.Drawing.Size(51, 16);
+            this.idAlumno.Size = new System.Drawing.Size(50, 16);
             this.idAlumno.TabIndex = 10;
             this.idAlumno.Text = "label1";
             // 
@@ -109,7 +109,7 @@ namespace miPrimerProyectoCsharp
             this.lblTelefonoAlumno.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTelefonoAlumno.Location = new System.Drawing.Point(31, 211);
             this.lblTelefonoAlumno.Name = "lblTelefonoAlumno";
-            this.lblTelefonoAlumno.Size = new System.Drawing.Size(74, 16);
+            this.lblTelefonoAlumno.Size = new System.Drawing.Size(73, 16);
             this.lblTelefonoAlumno.TabIndex = 8;
             this.lblTelefonoAlumno.Text = "Telefono:";
             // 
@@ -126,7 +126,7 @@ namespace miPrimerProyectoCsharp
             this.lblDireccionAlumno.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDireccionAlumno.Location = new System.Drawing.Point(31, 168);
             this.lblDireccionAlumno.Name = "lblDireccionAlumno";
-            this.lblDireccionAlumno.Size = new System.Drawing.Size(78, 16);
+            this.lblDireccionAlumno.Size = new System.Drawing.Size(77, 16);
             this.lblDireccionAlumno.TabIndex = 6;
             this.lblDireccionAlumno.Text = "Dirección:";
             // 
@@ -143,7 +143,7 @@ namespace miPrimerProyectoCsharp
             this.lblNombreAlumno.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombreAlumno.Location = new System.Drawing.Point(31, 126);
             this.lblNombreAlumno.Name = "lblNombreAlumno";
-            this.lblNombreAlumno.Size = new System.Drawing.Size(67, 16);
+            this.lblNombreAlumno.Size = new System.Drawing.Size(66, 16);
             this.lblNombreAlumno.TabIndex = 4;
             this.lblNombreAlumno.Text = "Nombre:";
             // 
@@ -160,7 +160,7 @@ namespace miPrimerProyectoCsharp
             this.lblCodigoAlumno.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCodigoAlumno.Location = new System.Drawing.Point(31, 89);
             this.lblCodigoAlumno.Name = "lblCodigoAlumno";
-            this.lblCodigoAlumno.Size = new System.Drawing.Size(62, 16);
+            this.lblCodigoAlumno.Size = new System.Drawing.Size(61, 16);
             this.lblCodigoAlumno.TabIndex = 2;
             this.lblCodigoAlumno.Text = "Código:";
             // 
@@ -170,7 +170,7 @@ namespace miPrimerProyectoCsharp
             this.lblIdAlumnos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblIdAlumnos.Location = new System.Drawing.Point(31, 38);
             this.lblIdAlumnos.Name = "lblIdAlumnos";
-            this.lblIdAlumnos.Size = new System.Drawing.Size(27, 16);
+            this.lblIdAlumnos.Size = new System.Drawing.Size(26, 16);
             this.lblIdAlumnos.TabIndex = 0;
             this.lblIdAlumnos.Text = "ID:";
             // 
@@ -300,14 +300,6 @@ namespace miPrimerProyectoCsharp
             this.grbBusquedaAlumno.TabStop = false;
             this.grbBusquedaAlumno.Text = "Busqueda Alumnos";
             // 
-            // txtBuscarAlumno
-            // 
-            this.txtBuscarAlumno.Location = new System.Drawing.Point(7, 22);
-            this.txtBuscarAlumno.Name = "txtBuscarAlumno";
-            this.txtBuscarAlumno.Size = new System.Drawing.Size(386, 22);
-            this.txtBuscarAlumno.TabIndex = 0;
-            this.txtBuscarAlumno.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtBuscarAlumno_KeyUp);
-            // 
             // grdAlumnos
             // 
             this.grdAlumnos.AllowUserToAddRows = false;
@@ -363,6 +355,14 @@ namespace miPrimerProyectoCsharp
             this.telefono.HeaderText = "Telefono";
             this.telefono.Name = "telefono";
             this.telefono.ReadOnly = true;
+            // 
+            // txtBuscarAlumno
+            // 
+            this.txtBuscarAlumno.Location = new System.Drawing.Point(7, 22);
+            this.txtBuscarAlumno.Name = "txtBuscarAlumno";
+            this.txtBuscarAlumno.Size = new System.Drawing.Size(386, 22);
+            this.txtBuscarAlumno.TabIndex = 0;
+            this.txtBuscarAlumno.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtBuscarAlumno_KeyUp);
             // 
             // Form1
             // 
