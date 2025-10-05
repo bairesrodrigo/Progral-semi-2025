@@ -26,7 +26,7 @@ namespace miPrimerProyectoCsharp
         private void actualizarDs()
         {
             objDs.Clear(); //Limpiar el DataSet
-            objDs = objConexion.obtenerDatosMateria();
+            objDs = objConexion.obtenerDatos();
             objDt = objDs.Tables["materias"];
             objDt.PrimaryKey = new DataColumn[] { objDt.Columns["idMateria"] };
 

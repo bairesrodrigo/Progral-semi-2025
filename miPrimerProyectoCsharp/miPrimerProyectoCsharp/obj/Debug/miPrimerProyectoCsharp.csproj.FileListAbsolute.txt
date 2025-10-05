@@ -64,3 +64,4 @@ C:\Users\rodri\Desktop\Progral-semi-2025\miPrimerProyectoCsharp\miPrimerProyecto
 C:\Users\rodri\Desktop\Progral-semi-2025\miPrimerProyectoCsharp\miPrimerProyectoCsharp\obj\Debug\miPrimerProyectoCsharp.csproj.CoreCompileInputs.cache
 C:\Users\rodri\Desktop\Progral-semi-2025\miPrimerProyectoCsharp\miPrimerProyectoCsharp\obj\Debug\miPrimerProyectoCsharp.exe
 C:\Users\rodri\Desktop\Progral-semi-2025\miPrimerProyectoCsharp\miPrimerProyectoCsharp\obj\Debug\miPrimerProyectoCsharp.pdb
+C:\Users\rodri\Desktop\Progral-semi-2025\miPrimerProyectoCsharp\miPrimerProyectoCsharp\obj\Debug\miPrimerProyectoCsharp.frmNotas.resources
