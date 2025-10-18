@@ -1,2 +1,3 @@
 wwwroot\img\logougb.png
+wwwroot\views\alumno.html
 wwwroot\views\index.html
