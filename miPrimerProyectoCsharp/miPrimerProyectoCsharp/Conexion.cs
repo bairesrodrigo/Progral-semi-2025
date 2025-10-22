@@ -29,69 +29,30 @@ namespace miPrimerProyectoCsharp
 
             objAdaptador.SelectCommand = objComando; //Establece el comando de seleccion
 
-            objComando.CommandText = "SELECT * FROM alumnos"; //Seleccionar todo de una tabla
-            objAdaptador.Fill(objDs, "alumnos"); //Tomando los datos de la BD y llenando DataSet
-
-            objComando.CommandText = "SELECT * FROM docentes"; //Seleccionar todo de una tabla
-            objAdaptador.Fill(objDs, "docentes"); //Tomando los datos de la BD y llenando DataSet
-
-            objComando.CommandText = "SELECT * FROM materias"; //Seleccionar todo de una tabla
-            objAdaptador.Fill(objDs, "materias");
+            objComando.CommandText = "SELECT * FROM usuarios";
+            objAdaptador.Fill(objDs, "usuarios");
 
             return objDs;
         }
-        public string administrarDatosAlumnos(String[] datos, String accion)
+
+        public string administrarDatosUsuarios(String[] datos, String accion)
         {
             String sql = "";
             if (accion == "nuevo")
             {
-                sql = "INSERT INTO alumnos(codigo,nombre,direccion,telefono) VALUES ('" + datos[1] + "', '" + datos[2] + "', '" + datos[3] + "', '" + datos[4] + "')";
+                sql = "INSERT INTO usuarios(usuario,clave,nombre,direccion,telefono) VALUES ('" + datos[1] + "', '" + datos[2] + "', '" + datos[3] + "', '" + datos[4] + "', '" + datos[5] + "')";
             }
             else if (accion == "modificar")
             {
-                sql = "UPDATE alumnos SET codigo='" + datos[1] + "', nombre='" + datos[2] + "', direccion='" + datos[3] + "', telefono='" + datos[4] + "' WHERE idAlumno='" + datos[0] + "'";
+                sql = "UPDATE usuarios SET usuario='" + datos[1] + "', clave='" + datos[2] + "', nombre='" + datos[3] + "', direccion='" + datos[4] + "', telefono='" + datos[5] + "' WHERE idUsuario='" + datos[0] + "'";
             }
             else if (accion == "eliminar")
             {
-                sql = "DELETE FROM alumnos WHERE idAlumno='" + datos[0] + "'";
+                sql = "DELETE FROM usuarios WHERE idUsuario='" + datos[0] + "'";
             }
             return ejecutarSQL(sql);
         }
-        
-        public string administrarDatosDocentes(String[] datos, String accion)
-        {
-            String sql = "";
-            if (accion == "nuevo")
-            {
-                sql = "INSERT INTO docentes(codigo,nombre,asignatura,direccion,telefono) VALUES ('" + datos[1] + "', '" + datos[2] + "', '" + datos[3] + "', '" + datos[4] + "','" + datos[5] + "')";
-            }
-            else if (accion == "modificar")
-            {
-                sql = "UPDATE docentes SET codigo='" + datos[1] + "', nombre='" + datos[2] + "', asignatura='" + datos[3] + "', direccion='" + datos[4] + "', telefono='" + datos[5] + "' WHERE idDocente='" + datos[0] + "'";
-            }
-            else if (accion == "eliminar")
-            {
-                sql = "DELETE FROM docentes WHERE idDocente='" + datos[0] + "'";
-            }
-            return ejecutarSQL(sql);
-        }
-        public string administrarDatosMateria(String[] datos, String accion)
-        {
-            String sql = "";
-            if (accion == "nuevo")
-            {
-                sql = "INSERT INTO materias(codigo,nombre,unidadvalorativa) VALUES ('" + datos[1] + "', '" + datos[2] + "', '" + datos[3] + "')";
-            }
-            else if (accion == "modificar")
-            {
-                sql = "UPDATE materias SET codigo='" + datos[1] + "', nombre='" + datos[2] + "', unidadvalorativa='" + datos[3] + "' WHERE idMateria='" + datos[0] + "'";
-            }
-            else if (accion == "eliminar")
-            {
-                sql = "DELETE FROM materias WHERE idMateria='" + datos[0] + "'";
-            }
-            return ejecutarSQL(sql);
-        }
+
         public String ejecutarSQL(String sql)
         {
             try
