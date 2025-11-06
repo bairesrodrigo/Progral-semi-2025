@@ -1,13 +1,14 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+using webappacademica.Models;
 using webappacdemica.Models;
 
-namespace webappacdemica.Controllers
+namespace webappacademica.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -27,17 +28,16 @@ namespace webappacdemica.Controllers
             return await _context.Alumnos.ToListAsync();
         }
 
-        //Por Rodrigo
-        // GET: api/Alumnos
+        // GET: api/Alumnos/buscar
         [HttpGet("buscar")]
-        public async Task<ActionResult<IEnumerable<Alumno>>> BuscarAlumnos([FromQuery] AlumnoBusquedaParametros parametros)
+        public async Task<ActionResult<IEnumerable<Alumno>>> BuscarAlumno([FromQuery] AlumnoBusquedaParametros parametros)
         {
             var consulta = _context.Alumnos.AsQueryable();
             if (!string.IsNullOrEmpty(parametros.buscar))
             {
-                consulta = consulta.Where(a => a.nombre.Contains(parametros.buscar));
+                consulta = consulta.Where(alumno => alumno.nombre.Contains(parametros.buscar));
             }
-            if(!string.IsNullOrEmpty(parametros.buscar) && consulta.Count() <= 0)
+            if (!string.IsNullOrEmpty(parametros.buscar) && consulta.Count() <= 0)
             {
                 consulta = _context.Alumnos.AsQueryable();
                 consulta = consulta.Where(alumno => alumno.codigo.Contains(parametros.buscar));
@@ -86,7 +86,6 @@ namespace webappacdemica.Controllers
                     throw;
                 }
             }
-
             return CreatedAtAction("GetAlumno", new { id = alumno.idAlumno }, alumno);
         }
 
