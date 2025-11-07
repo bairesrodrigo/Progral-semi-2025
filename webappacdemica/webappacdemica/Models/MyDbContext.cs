@@ -15,6 +15,7 @@ namespace webappacademica.Models
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<Alumno>().HasKey(a => a.idAlumno);
             modelBuilder.Entity<Materia>().HasKey(m => m.idMateria);
+            modelBuilder.Entity<Docente>().HasKey(e => e.idDocente);
         }
     }
 }

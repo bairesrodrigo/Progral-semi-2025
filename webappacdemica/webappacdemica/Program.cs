@@ -1,6 +1,5 @@
 using Microsoft.EntityFrameworkCore;
 using webappacademica.Models;
-using webappacdemica.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
