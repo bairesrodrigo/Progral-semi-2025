@@ -1067,7 +1067,7 @@
           },
           "fecha": {
             "type": "string",
-            "nullable": true
+            "format": "date-time"
           },
           "periodo": {
             "type": "string",

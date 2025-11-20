@@ -3,13 +3,12 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
-using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Threading.Tasks;
 using webappacademica.Models;
 using webappacdemica.Models;
 
-namespace webappacdemica.Controllers
+namespace webappacademica.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -36,7 +35,7 @@ namespace webappacdemica.Controllers
             var consulta = _context.Periodos.AsQueryable();
             if (!string.IsNullOrEmpty(parametros.buscar))
             {
-                consulta = consulta.Where(periodo => periodo.fecha.Contains(parametros.buscar));
+                consulta = consulta.Where(periodo => periodo.fecha.ToString().Contains(parametros.buscar));
             }
             if (!string.IsNullOrEmpty(parametros.buscar) && consulta.Count() <= 0)
             {
@@ -87,7 +86,6 @@ namespace webappacdemica.Controllers
                     throw;
                 }
             }
-
             return CreatedAtAction("GetPeriodo", new { id = periodo.idPeriodo }, periodo);
         }
 

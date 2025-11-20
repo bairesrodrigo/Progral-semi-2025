@@ -405,7 +405,7 @@
     ]
   },
   {
-    "ContainingType": "webappacdemica.Controllers.PeriodosController",
+    "ContainingType": "webappacademica.Controllers.PeriodosController",
     "Method": "GetPeriodos",
     "RelativePath": "api/Periodos",
     "HttpMethod": "GET",
@@ -425,7 +425,7 @@
     ]
   },
   {
-    "ContainingType": "webappacdemica.Controllers.PeriodosController",
+    "ContainingType": "webappacademica.Controllers.PeriodosController",
     "Method": "PostPeriodo",
     "RelativePath": "api/Periodos",
     "HttpMethod": "POST",
@@ -451,7 +451,7 @@
     ]
   },
   {
-    "ContainingType": "webappacdemica.Controllers.PeriodosController",
+    "ContainingType": "webappacademica.Controllers.PeriodosController",
     "Method": "GetPeriodo",
     "RelativePath": "api/Periodos/{id}",
     "HttpMethod": "GET",
@@ -477,7 +477,7 @@
     ]
   },
   {
-    "ContainingType": "webappacdemica.Controllers.PeriodosController",
+    "ContainingType": "webappacademica.Controllers.PeriodosController",
     "Method": "PutPeriodo",
     "RelativePath": "api/Periodos/{id}",
     "HttpMethod": "PUT",
@@ -498,7 +498,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "webappacdemica.Controllers.PeriodosController",
+    "ContainingType": "webappacademica.Controllers.PeriodosController",
     "Method": "DeletePeriodo",
     "RelativePath": "api/Periodos/{id}",
     "HttpMethod": "DELETE",
@@ -514,7 +514,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "webappacdemica.Controllers.PeriodosController",
+    "ContainingType": "webappacademica.Controllers.PeriodosController",
     "Method": "BuscarPeriodo",
     "RelativePath": "api/Periodos/buscar",
     "HttpMethod": "GET",
