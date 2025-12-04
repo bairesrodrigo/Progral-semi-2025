@@ -1,4 +1,5 @@
-﻿document.addEventListener("DOMContentLoaded", e => {
+﻿var formActivo = "";
+document.addEventListener("DOMContentLoaded", e => {
     mnxAcademica.addEventListener("click", event => {
         event.preventDefault();
         abrirVentana(event.target.dataset.form);

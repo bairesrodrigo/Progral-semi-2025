@@ -40,7 +40,7 @@
             filas = '';
         alumnos.forEach(alumno => {
             filas += `
-               <tr onClick='modificarAlumno(${JSON.stringify(alumno)})'>
+               <tr onClick='mostrarDatosAlumno(${JSON.stringify(alumno)})'>
                   <td>${alumno.codigo}</td>
                   <td>${alumno.nombre}</td>
                   <td>${alumno.direccion}</td>
@@ -64,6 +64,13 @@
                 alert(`Error no se puedo eliminar el alumno ${alumno.nombre}, error: ${data}`);
             }
             listarAlumnos();
+        }
+    }
+    function mostrarDatosAlumno(alumno) {
+        if (formActivo == "matricula") {
+            txtAlumnoMatricula.value = alumno.nombre;
+        } else {
+            modificarAlumno(alumno);
         }
     }
 </script>
