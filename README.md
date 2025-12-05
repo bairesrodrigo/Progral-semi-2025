@@ -24,3 +24,5 @@ Programacion Computacional I
 * Menu y accesos rapidos, barras de herramientas, cuadros de dialogo
 * Creatividad e Innovacion
 
+# Notas
+El proyecto final aparece con el nombre de solo dos integrantes del equipo porque trabaje mi parte en sus maquinas ya que mi laptop no es tan potente y me dio problemas al probar la web app. Por lo mismo le hice fork al trabajo final para que este en mi github
